@@ -1,73 +1,367 @@
-# Welcome to your Lovable project
+<div align="center">
 
-## Project info
+# PaperTrail
 
-**URL**: https://lovable.dev/projects/3cf9702e-8eb9-49d8-8017-929c8d2c469e
+### Professional Invoice Generator
 
-## How can I edit this code?
+A modern, client-side invoice management system built for freelancers, small businesses, and professionals who need a fast, elegant solution for creating and managing invoices.
 
-There are several ways of editing your application.
+[Features](#-features) • [Tech Stack](#-tech-stack) • [Installation](#-installation) • [Usage](#-usage) • [Project Structure](#-project-structure)
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/3cf9702e-8eb9-49d8-8017-929c8d2c469e) and start prompting.
+</div>
 
-Changes made via Lovable will be committed automatically to this repo.
+## 📋 Overview
 
-**Use your preferred IDE**
+PaperTrail is a powerful, privacy-first invoice generator that runs entirely in your browser. All your data stays local—no server required, no data transmitted, complete control. Create professional invoices with beautiful templates, manage clients, track payments, and export to PDF with ease.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## ✨ Features
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Core Functionality
 
-Follow these steps:
+- **Invoice Management**
+  - Create, edit, and delete invoices with an intuitive interface
+  - Auto-save functionality (saves every 5 seconds)
+  - Duplicate existing invoices for quick creation
+  - Multiple invoice statuses: Draft, Sent, Paid, Overdue
+  - Advanced search and filtering by invoice number or client name
+  - Smart sorting by date, amount, or status
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- **Client Management**
+  - Save and manage client information
+  - Auto-populate client details in new invoices
+  - Store company details, tax IDs, contact information
+  - Quick client selection from saved database
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- **Professional Templates**
+  - Three beautiful template options: Minimal, Professional, Modern
+  - Fully customizable branding (logo, colors, footer text)
+  - Responsive invoice preview with real-time updates
+  - Export to high-quality PDF
 
-# Step 3: Install the necessary dependencies.
-npm i
+- **Flexible Line Items**
+  - Unlimited line items per invoice
+  - Support for both percentage and fixed discounts
+  - Automatic calculations for subtotals, tax, and totals
+  - Quantity and unit price management
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+- **Customization**
+  - Configurable invoice prefix (e.g., INV, BILL)
+  - Multiple currency support (USD, EUR, GBP, INR, BDT)
+  - Custom payment terms (Due on Receipt, Net 15/30/60)
+  - Tax rate configuration
+  - Brand color customization with live preview
+  - Company logo upload support
+
+### User Experience
+
+- **Dark/Light Theme Support** via Next Themes
+- **Responsive Design** optimized for desktop and mobile
+- **Toast Notifications** for user feedback
+- **Confirmation Dialogs** for destructive actions
+- **Keyboard Navigation** and accessibility features
+- **Local Storage Persistence** for complete privacy
+
+## 🛠 Tech Stack
+
+### Frontend Framework & Libraries
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+#### Core Technologies
+- **React 18.3** - UI framework
+- **TypeScript 5.8** - Type-safe development
+- **Vite 5.4** - Lightning-fast build tool
+- **React Router DOM 6.30** - Client-side routing
+- **TanStack React Query 5.83** - Data synchronization
+
+#### Styling & UI
+- **Tailwind CSS 3.4** - Utility-first CSS
+- **Radix UI Components** - Accessible primitives
+- **Shadcn/ui** - Beautiful component library
+- **Class Variance Authority** - Component variants
+- **Tailwind Merge** - Conflict-free class merging
+- **Next Themes** - Theme management
+
+</td>
+<td width="50%" valign="top">
+
+#### UI Components & Features
+- **Lucide React** - Icon system
+- **React Hook Form 7.61** - Form management
+- **Zod 3.25** - Schema validation
+- **Date-fns 3.6** - Date manipulation
+- **React Day Picker 8.10** - Date selection
+- **Recharts 2.15** - Chart library
+- **Sonner** - Toast notifications
+- **Embla Carousel** - Carousel component
+- **React Resizable Panels** - Split layouts
+- **CMDK** - Command menu
+- **Vaul** - Drawer component
+
+</td>
+</tr>
+</table>
+
+### Development Tools
+
+- **ESLint** - Code linting with React hooks plugin
+- **TypeScript ESLint** - TypeScript-specific linting
+- **PostCSS & Autoprefixer** - CSS processing
+- **Lovable Tagger** - Component tagging (development mode)
+- **Vite Plugin React SWC** - Fast refresh with SWC compiler
+
+### Data Storage
+
+- **LocalStorage API** - Client-side data persistence
+  - Invoices collection
+  - Client database
+  - Application settings
+  - Invoice counter for auto-numbering
+
+## 📦 Installation
+
+### Prerequisites
+
+- Node.js 16.x or higher
+- npm, pnpm, or bun package manager
+
+### Setup Steps
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd paper-trail
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   pnpm install
+   # or
+   bun install
+   ```
+
+3. **Start development server**
+   ```bash
+   npm run dev
+   ```
+   The application will be available at `http://localhost:8080`
+
+4. **Build for production**
+   ```bash
+   npm run build
+   ```
+
+5. **Preview production build**
+   ```bash
+   npm run preview
+   ```
+
+## 🚀 Usage
+
+### Creating Your First Invoice
+
+1. Navigate to the Dashboard
+2. Click "Create Invoice" button
+3. Fill in client information (or select from saved clients)
+4. Add line items with descriptions, quantities, and prices
+5. Configure discounts and tax rates as needed
+6. Customize branding and template in the preview panel
+7. Save the invoice (auto-saves every 5 seconds)
+8. Export to PDF when ready
+
+### Managing Clients
+
+1. Go to Dashboard
+2. Save client information when creating invoices
+3. Reuse client data for future invoices
+4. Update or delete clients as needed
+
+### Customizing Settings
+
+1. Navigate to Settings page
+2. Configure default values:
+   - Invoice prefix and numbering
+   - Default currency
+   - Preferred template style
+   - Payment terms
+3. Customize branding:
+   - Upload company logo
+   - Set brand colors (primary, secondary, background)
+   - Define default footer text
+4. Save settings to apply to new invoices
+
+## 📁 Project Structure
+
+```
+paper-trail/
+├── src/
+│   ├── components/          # React components
+│   │   ├── invoice/        # Invoice-specific components
+│   │   │   ├── InvoiceForm.tsx      # Invoice editing form
+│   │   │   ├── InvoicePreview.tsx   # Real-time preview
+│   │   │   └── templates/           # Invoice templates
+│   │   ├── ui/             # Reusable UI components (Shadcn)
+│   │   ├── ClientManager.tsx        # Client management
+│   │   ├── ConfirmDialog.tsx       # Confirmation dialogs
+│   │   ├── Layout.tsx              # App layout wrapper
+│   │   └── NavLink.tsx             # Navigation links
+│   ├── contexts/           # React contexts
+│   │   └── ThemeContext.tsx        # Theme provider
+│   ├── hooks/              # Custom React hooks
+│   ├── lib/                # Utility libraries
+│   │   ├── storage.ts              # LocalStorage operations
+│   │   └── utils.ts                # Helper functions
+│   ├── pages/              # Page components
+│   │   ├── Dashboard.tsx           # Main dashboard
+│   │   ├── InvoiceBuilder.tsx     # Invoice creation/editing
+│   │   ├── Settings.tsx            # App settings
+│   │   ├── Clients.tsx             # Client management page
+│   │   ├── Index.tsx               # Landing page
+│   │   └── NotFound.tsx            # 404 page
+│   ├── App.tsx             # Root application component
+│   ├── main.tsx            # Application entry point
+│   └── index.css           # Global styles
+├── public/                 # Static assets
+├── index.html             # HTML template
+├── vite.config.ts         # Vite configuration
+├── tailwind.config.ts     # Tailwind CSS configuration
+├── tsconfig.json          # TypeScript configuration
+├── components.json        # Shadcn UI configuration
+└── package.json           # Project dependencies
+
 ```
 
-**Edit a file directly in GitHub**
+## 💾 Data Schema
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Invoice Interface
 
-**Use GitHub Codespaces**
+```typescript
+interface Invoice {
+  id: string;
+  number: string;              // Auto-generated (e.g., INV-2024-001)
+  title: string;
+  clientInfo: ClientInfo;
+  items: LineItem[];
+  currency: string;
+  date: string;
+  dueDate: string;
+  paymentTerms: string;
+  paymentInstructions: string;
+  notes: string;
+  status: 'draft' | 'sent' | 'paid' | 'overdue';
+  template: 'minimal' | 'professional' | 'modern';
+  branding: BrandingConfig;
+  settings: InvoiceSettings;
+  pdfSettings: PDFSettings;
+  taxRate: number;
+  attachments: string[];
+  createdAt: string;
+  updatedAt: string;
+}
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Client Interface
 
-## What technologies are used for this project?
+```typescript
+interface ClientInfo {
+  name: string;
+  email: string;
+  address: string;
+  phone: string;
+  company: string;
+  taxId: string;
+}
 
-This project is built with:
+interface SavedClient extends ClientInfo {
+  id: string;
+  createdAt: string;
+  updatedAt: string;
+}
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Line Item Interface
 
-## How can I deploy this project?
+```typescript
+interface LineItem {
+  id: string;
+  description: string;
+  quantity: number;
+  unitPrice: number;
+  discount: number;
+  discountType: 'percentage' | 'fixed';
+}
+```
 
-Simply open [Lovable](https://lovable.dev/projects/3cf9702e-8eb9-49d8-8017-929c8d2c469e) and click on Share -> Publish.
+## 🎨 Customization
 
-## Can I connect a custom domain to my Lovable project?
+### Theme Configuration
 
-Yes, you can!
+The application supports both light and dark themes through the `ThemeContext`. Theme switching is automatic based on system preferences, with manual override available.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Template Customization
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Three professional templates are included:
+- **Minimal** - Clean and simple design
+- **Professional** - Traditional business invoice
+- **Modern** - Contemporary styling with bold accents
+
+Each template supports full color customization and logo integration.
+
+### Branding Options
+
+- Custom logo upload (Base64 encoded storage)
+- Primary brand color
+- Secondary accent color
+- Background color
+- Custom footer text
+
+## 🔒 Privacy & Security
+
+- **100% Client-Side** - No data sent to servers
+- **LocalStorage Only** - Data stays on your device
+- **No Tracking** - Complete privacy
+- **No Account Required** - Instant access
+- **Offline Capable** - Works without internet
+
+## 📝 Available Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server on port 8080 |
+| `npm run build` | Build for production |
+| `npm run build:dev` | Build with development mode |
+| `npm run preview` | Preview production build |
+| `npm run lint` | Run ESLint |
+
+## 🌐 Browser Support
+
+- Chrome/Edge 90+
+- Firefox 88+
+- Safari 14+
+- Opera 76+
+
+Requires modern browser with LocalStorage API support.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+
+## 📄 License
+
+This project is open source and available for personal and commercial use.
+
+---
+
+<div align="center">
+
+**Built using React + TypeScript + Vite**
+
+*PaperTrail - Making invoicing simple, professional, and private*
+
+</div>
