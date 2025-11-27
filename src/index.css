@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 210 15% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 15% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 15% 20%;
+
+    --primary: 195 75% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 10% 92%;
+    --secondary-foreground: 210 15% 20%;
+
+    --muted: 210 10% 95%;
+    --muted-foreground: 210 10% 45%;
+
+    --accent: 195 75% 35%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 15% 88%;
+    --input: 210 15% 88%;
+    --ring: 195 75% 35%;
+
+    --radius: 0.375rem;
+    
+    --invoice-bg: 0 0% 100%;
+    --invoice-text: 210 15% 20%;
+    --invoice-muted: 210 10% 60%;
+    --invoice-border: 210 15% 90%;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 210 20% 10%;
+    --foreground: 210 10% 95%;
+
+    --card: 210 20% 12%;
+    --card-foreground: 210 10% 95%;
+
+    --popover: 210 20% 12%;
+    --popover-foreground: 210 10% 95%;
+
+    --primary: 195 75% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 15% 18%;
+    --secondary-foreground: 210 10% 95%;
+
+    --muted: 210 15% 18%;
+    --muted-foreground: 210 10% 65%;
+
+    --accent: 195 75% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 15% 20%;
+    --input: 210 15% 20%;
+    --ring: 195 75% 45%;
+    
+    --invoice-bg: 0 0% 100%;
+    --invoice-text: 210 15% 20%;
+    --invoice-muted: 210 10% 60%;
+    --invoice-border: 210 15% 90%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+
+  /* Custom Scrollbar Styling */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--primary) / 0.3) transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.3);
+    border-radius: 3px;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.5);
+  }
+
+  /* Dark mode scrollbar */
+  .dark *::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.4);
+  }
+
+  .dark *::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.6);
+  }
+}
