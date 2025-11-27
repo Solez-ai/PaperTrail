@@ -175,13 +175,6 @@ PaperTrail is a powerful, privacy-first invoice generator that runs entirely in 
 7. Save the invoice (auto-saves every 5 seconds)
 8. Export to PDF when ready
 
-### Managing Clients
-
-1. Go to Dashboard
-2. Save client information when creating invoices
-3. Reuse client data for future invoices
-4. Update or delete clients as needed
-
 ### Customizing Settings
 
 1. Navigate to Settings page
